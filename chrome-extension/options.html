@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkillQuest AI Extension Settings</title>
+    <style>
+      body { font-family: Inter, system-ui, sans-serif; max-width: 680px; margin: 24px auto; padding: 0 12px; }
+      h1 { margin-bottom: 8px; }
+      p { color: #334155; }
+      input { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 10px; }
+      button { margin-top: 10px; padding: 10px 14px; border: 0; background: #0284c7; color: white; border-radius: 10px; cursor: pointer; }
+      code { background: #f1f5f9; padding: 2px 4px; border-radius: 4px; }
+      #status { margin-top: 8px; color: #0369a1; }
+    </style>
+  </head>
+  <body>
+    <h1>SkillQuest AI Extension Settings</h1>
+    <p>Set the URL for your SkillQuest AI app (local, staging, or production).</p>
+    <label for="urlInput">App URL</label>
+    <input id="urlInput" type="url" placeholder="http://localhost:5173" />
+    <button id="saveBtn">Save</button>
+    <p id="status"></p>
+    <p>Tip: if popup embedding is blocked by the host, use <code>Open Full App</code>.</p>
+    <script src="options.js"></script>
+  </body>
+</html>

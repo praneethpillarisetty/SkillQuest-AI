@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "SkillQuest AI Companion",
+  "description": "Launch SkillQuest AI from Chrome as a popup or full tab.",
+  "version": "1.0.0",
+  "permissions": ["storage", "tabs", "contextMenus"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "action": {
+    "default_title": "SkillQuest AI",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options.html"
+}

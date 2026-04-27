@@ -72,6 +72,51 @@ npm run build
 npm start
 ```
 
+## Multi-Environment + Serverless Support
+
+SkillQuest AI now works in three modes:
+
+1. **Local full-stack mode** (default): `npm run dev`
+2. **Traditional server mode**: `npm start` serves API + built frontend
+3. **Serverless API mode**: `api/index.js` exports the Express app as a serverless handler (Vercel-ready via `vercel.json`)
+
+### Environment portability
+
+- `DATABASE_URL`: optional SQLite file path override (useful in Docker/CI/custom hosts)
+- On serverless platforms, SQLite falls back to `/tmp/skillquest.db` automatically
+- If file-based DB cannot be opened, app falls back to in-memory SQLite for reliability
+- `VITE_API_BASE_URL`: optional frontend API base URL override for split frontend/backend deployments
+
+
+## Chrome Extension (MV3)
+
+A ready-to-load Chrome extension is included in `chrome-extension/`.
+
+### What it does
+
+- Opens SkillQuest AI in the browser action popup
+- Lets you open the full app in a tab
+- Supports local/staging/prod app URLs via extension settings
+
+### Load in Chrome
+
+1. Open `chrome://extensions`
+2. Enable **Developer mode**
+3. Click **Load unpacked**
+4. Select the `chrome-extension` folder
+
+### Configure URL
+
+- Open extension **Details** → **Extension options**, or click **Settings** in popup.
+- Set your app URL, e.g.:
+  - `http://localhost:5173` (local dev)
+  - `https://your-deployment-url` (hosted)
+
+## Notes
+
+- If `OPENAI_API_KEY` is missing, AI endpoints return deterministic mock responses so the app still works end-to-end.
+- SQLite database is created automatically with starter data.
+- For persistent serverless production data, replace SQLite with a managed DB (Postgres, Turso, etc.).
 ## Notes
 
 - If `OPENAI_API_KEY` is missing, AI endpoints return deterministic mock responses so the app still works end-to-end.
