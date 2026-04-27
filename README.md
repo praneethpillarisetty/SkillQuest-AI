@@ -117,3 +117,7 @@ A ready-to-load Chrome extension is included in `chrome-extension/`.
 - If `OPENAI_API_KEY` is missing, AI endpoints return deterministic mock responses so the app still works end-to-end.
 - SQLite database is created automatically with starter data.
 - For persistent serverless production data, replace SQLite with a managed DB (Postgres, Turso, etc.).
+## Notes
+
+- If `OPENAI_API_KEY` is missing, AI endpoints return deterministic mock responses so the app still works end-to-end.
+- SQLite database is created automatically at `server/data/skillquest.db` with starter data.
